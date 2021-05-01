@@ -9,6 +9,10 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
+        path: '',
+        loadChildren: () => import('./pages/start/start.module').then(m => m.StartModule)
+      },
+      {
         path: 'products',
         loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule)
       },
@@ -16,6 +20,7 @@ const routes: Routes = [
         path: 'login',
         loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
       },
+      
     ]
   }
 ];
