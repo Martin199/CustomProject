@@ -10,9 +10,11 @@
 
     border-radius: 33px;
     background-color: #D0D1D3;
-    color: #B5B6BA;
+    color: #214781;
+    
     
 }
+
 .rounded-button{    
     width:100%;
     border-radius: 33px;
@@ -20,7 +22,21 @@
     color: #212529;
 
 }
+.rounded-button-unirse{
+    width:100%;
+    border-radius: 33px;
+    background-color: #E389A0;
+    color: white;
+}
 
 .fs-8{
     font-size: 0.7em;
+}
+
+.fa {
+    font-size: 12px;
+}
+.card-unete{
+    background-color: #C1C1C1;
+    border-radius: 50px;
 }
