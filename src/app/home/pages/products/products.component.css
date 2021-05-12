@@ -1,0 +1,9 @@
+.nav-products{
+    border-radius: 33px;
+
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
