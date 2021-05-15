@@ -7,3 +7,33 @@
     display: block;
     margin-top: 0;
  }
+
+.product{
+    background-image: url('https://dummyimage.com/300x400/adadad/000000');
+    height: 400px;
+    width: 300px;
+    
+}
+
+.rounded-button{    
+    width:50%;
+    border-radius: 33px;
+    background-color: #D0D1D3;
+    color: #212529;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity: 0.5;
+
+}
+.rounded-button:hover{
+    opacity: 1;
+}
+
+.fav{
+    text-align: right;
+    
+}
+
