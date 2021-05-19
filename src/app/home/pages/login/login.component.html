@@ -14,10 +14,10 @@
               <p class="fs-8">He leído y acepto los Términos y Condiciones de privacidad de Custom 21.</p>
               
             </div>
-            <div *ngIf="ErrorMessage"  class="alert alert-danger" role="alert">
+            <!-- <div *ngIf="ErrorMessage"  class="alert alert-danger" role="alert">
                 <p *ngIf="ErrorMessage.errors.email.msg">{{ErrorMessage.errors.email.msg}}</p>
                 <p *ngIf="ErrorMessage.errors.password.msg">{{ErrorMessage.errors.password.msg}}</p>
-            </div>
+            </div> -->
             
             <p class="fs-8" style="text-align:left;">Ingresa también con</p>
             <div class="row mx-5">
@@ -115,7 +115,5 @@
     </div>
   </div>
 </div>
-
-<h1 *ngIf="response">{{response.msg}}</h1>
 
 

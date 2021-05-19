@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  token:boolean;
+  constructor() {}
 
   ngOnInit(): void {
+    this.validarToken();
+  }
+
+  validarToken(){
+    if(localStorage.getItem('token')){
+      this.token=true;
+    }else{
+      this.token=false;
+    }
   }
 
 }

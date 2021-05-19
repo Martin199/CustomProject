@@ -16,7 +16,6 @@ export class LoginService {
 
   register(register){
 
-
     return this.http.post('http://localhost:3000/api/usuarios', register)
 
   }
