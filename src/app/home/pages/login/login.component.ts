@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { Register, RegisterErrorMessage } from '../../interfaces/login.interface';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +14,18 @@ export class LoginComponent implements OnInit {
   email:string;
   password:string;
   ErrorMessage:string;
+  password2:string;
 
-  register={
+
+  RegisterError:RegisterErrorMessage;
+  PasswordValidation:boolean=false;
+
+  register: Register ={
     "password": "",
     "email" : "",
     "name" : "",
     "surname" : "",
-    "phone" : 0,
+    "phone" : "",
     "dni": "",
     "direction": "",
     "directionNumber": "",
@@ -51,17 +57,30 @@ export class LoginComponent implements OnInit {
   }
 
   registerUser(){
-    this.LoginService.register(this.register)
-                      .subscribe(
-                        // Successful responses call the first callback.
-                        data => {
-                          console.log(data)
-                        },
-                        // Errors will call this callback instead:
-                        err => {
-                          console.log(err)
-                        }
-                      )
+
+
+    if(this.register.password==this.password2){
+      this.PasswordValidation=false
+      this.LoginService.register(this.register)
+                        .subscribe(
+                          // Successful responses call the first callback.
+                          data => {
+                            this.response=data
+                            this.token=this.response.token
+                            this.router.navigateByUrl('/products')
+                            localStorage.setItem('token', this.token);
+                          },
+                          // Errors will call this callback instead:
+                          err => {
+                            this.RegisterError=err
+                            console.log(this.RegisterError)
+                          }
+                        )
+                  
+    }else{
+      this.PasswordValidation=true
+    }
+
   }
 
 }

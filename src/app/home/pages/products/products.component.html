@@ -51,9 +51,9 @@
 
     </div>
   </nav>
-  <div class="col-3">
+  <div  class="col-3">
 
-    <div class="card product">
+    <div *ngFor="let producto of productos" class="card product">
       <div class="card-header fav">
       
         <i (click)="fav=!fav" *ngIf="fav" class="fas fa-heart"></i>

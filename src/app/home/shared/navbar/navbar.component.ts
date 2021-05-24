@@ -22,4 +22,9 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  logout(){
+    this.token=false;
+    localStorage.clear()
+  }
+
 }

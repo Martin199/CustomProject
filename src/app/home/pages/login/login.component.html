@@ -6,19 +6,23 @@
         <div class="card-body">
           <div class="mx-5">
             <h1 class="mb-5">Iniciar Sesión</h1>
-            <input type="email" class="form-control rounded-input mb-4" [(ngModel)]="email" placeholder="Correo Electrónico">
-            <input type="password" class="form-control rounded-input mb-4" [(ngModel)]="password" placeholder="Contraseña">
-            <div class="mb-4"><a>¿Olvidaste tu contraseña?</a></div>
-            <div class="mx-5">
-              <button type="button" class="btn rounded-button" (click)="login()">Ingresar</button>
-              <p class="fs-8">He leído y acepto los Términos y Condiciones de privacidad de Custom 21.</p>
-              
-            </div>
+            <form (ngSubmit)="login()">
+              <input type="email" class="form-control rounded-input mb-4" [(ngModel)]="email" name="email"
+                placeholder="Correo Electrónico">
+              <input type="password" class="form-control rounded-input mb-4" [(ngModel)]="password" name="password"
+                placeholder="Contraseña">
+              <div class="mb-4"><a>¿Olvidaste tu contraseña?</a></div>
+              <div class="mx-5">
+                <button type="submit" class="btn rounded-button">Ingresar</button>
+                <p class="fs-8">He leído y acepto los Términos y Condiciones de privacidad de Custom 21.</p>
+
+              </div>
+            </form>
             <!-- <div *ngIf="ErrorMessage"  class="alert alert-danger" role="alert">
                 <p *ngIf="ErrorMessage.errors.email.msg">{{ErrorMessage.errors.email.msg}}</p>
                 <p *ngIf="ErrorMessage.errors.password.msg">{{ErrorMessage.errors.password.msg}}</p>
             </div> -->
-            
+
             <p class="fs-8" style="text-align:left;">Ingresa también con</p>
             <div class="row mx-5">
               <div class="col">
@@ -67,21 +71,25 @@
 
           <div class="row">
             <div class="col">
-              <input type="text" [(ngModel)]="register.name" class="form-control rounded-input mb-4" placeholder="Nombre">
+              <input type="text" [(ngModel)]="register.name" class="form-control rounded-input mb-4"
+                placeholder="Nombre">
             </div>
             <div class="col">
-              <input type="text" [(ngModel)]="register.surname" class="form-control rounded-input mb-4" placeholder="Apellido">
+              <input type="text" [(ngModel)]="register.surname" class="form-control rounded-input mb-4"
+                placeholder="Apellido">
             </div>
           </div>
 
-          <input type="email" [(ngModel)]="register.email" class="form-control rounded-input mb-4" placeholder="Correo Electrónico">
+          <input type="email" [(ngModel)]="register.email" class="form-control rounded-input mb-4"
+            placeholder="Correo Electrónico">
 
           <div class="row">
             <div class="col">
-              <input type="password" [(ngModel)]="register.password" class="form-control rounded-input mb-4" placeholder="Contraseña">
+              <input type="password" [(ngModel)]="register.password" class="form-control rounded-input mb-4"
+                placeholder="Contraseña">
             </div>
             <div class="col">
-              <input type="password" class="form-control rounded-input mb-4" placeholder="Validación de contraseña">
+              <input type="password" [(ngModel)]="password2" class="form-control rounded-input mb-4" placeholder="Validación de contraseña">
             </div>
           </div>
 
@@ -89,31 +97,43 @@
 
           <div class="row">
             <div class="col">
-              <input type="number" [(ngModel)]="register.phone" class="form-control rounded-input mb-4" placeholder="Celular">
+              <input type="text" [(ngModel)]="register.phone" class="form-control rounded-input mb-4"
+                placeholder="Celular">
             </div>
             <div class="col">
               <input type="text" [(ngModel)]="register.dni" class="form-control rounded-input mb-4" placeholder="DNI">
             </div>
           </div>
 
-          <input type="text" [(ngModel)]="register.location" class="form-control rounded-input mb-4" placeholder="Localidad">
+          <input type="text" [(ngModel)]="register.location" class="form-control rounded-input mb-4"
+            placeholder="Localidad">
 
           <div class="row">
             <div class="col">
-              <input type="text" [(ngModel)]="register.direction" class="form-control rounded-input mb-4" placeholder="Dirección">
+              <input type="text" [(ngModel)]="register.direction" class="form-control rounded-input mb-4"
+                placeholder="Dirección">
             </div>
             <div class="col">
-              <input type="text" [(ngModel)]="register.directionNumber" class="form-control rounded-input mb-4" placeholder="Número">
+              <input type="text" [(ngModel)]="register.directionNumber" class="form-control rounded-input mb-4"
+                placeholder="Número">
             </div>
           </div>
 
+          <div *ngIf="PasswordValidation" class="alert alert-danger mt-1" role="alert">
+           Las contraseñas no coinciden.
+          </div>
+          <div *ngIf="RegisterError" class="alert alert-danger mt-1" role="alert">
+            <p *ngFor="let item of RegisterError.error.errors | keyvalue">{{item.value.msg}}</p>
+            
+          </div>
+
           <button type="button" class="btn rounded-button-unirse" (click)="registerUser()">Unite</button>
+
           
+
         </div>
 
       </div>
     </div>
   </div>
 </div>
-
-
