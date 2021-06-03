@@ -1,3 +1,35 @@
-.img {
-    height: 100vh;
+.contenedor{
+    max-width: 120rem; /* 1200 px */
+    margin: 0 auto ;
+}
+.img-main{
+    height: 95vh;
+}
+.btn-light{
+    border-radius: 25px;
+    height: 50px;
+    width:200px;
+}
+.btn-light:hover{
+    background-color:rgba(17, 16, 16, 0.87);
+    color: white;
+}
+
+.cat-title{
+    height: 90px;
+}
+.img-reel{
+    height: 60vh;
+}
+.nav-container{
+    display: flex;
+    align-content: space-around;
+    align-items: center;
+}
+.nav-container img{
+    border-radius: 25px;
+}
+.nav-container-secundario img{
+    width: 50%;
+    margin-bottom: 20px;
 }
